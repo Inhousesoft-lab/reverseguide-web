@@ -7,7 +7,9 @@ import Image from "next/image";
 
 // 헤더 메뉴 아이템
 const navItems = [
-  { name: "채용정보", href: "/recruitment" },
+  { name: "관통사", href: "/recruitment?category=01" },
+  { name: "TC", href: "/recruitment?category=02" },
+  { name: "국내", href: "/recruitment?category=03" },
   { name: "Contact", href: "/contact" },
   { name: "Company", href: "http://www.inhousesoft.com/" },
 ];
