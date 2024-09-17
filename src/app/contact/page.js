@@ -15,18 +15,16 @@ export default function Contact() {
   }, []);
 
   return (
-    <div className="home-container">
-      <main className="main-content">
-        CONTACT
-        {data && (
-          <div className="api-data">
-            <h2 className="api-data-title">API Data:</h2>
-            <pre className="api-data-content">
-              {JSON.stringify(data, null, 2)}
-            </pre>
-          </div>
-        )}
-      </main>
+    <div>
+      CONTACT
+      {data && (
+        <div className="api-data">
+          <h2 className="api-data-title">API Data:</h2>
+          <pre className="api-data-content">
+            {JSON.stringify(data, null, 2)}
+          </pre>
+        </div>
+      )}
     </div>
   );
 }
