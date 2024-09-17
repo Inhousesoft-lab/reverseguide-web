@@ -1,8 +1,5 @@
 "use client";
-
 import { useState, useEffect } from "react";
-import Header from "@/widgets/Header";
-import Footer from "@/widgets/Footer";
 
 export default function Contact() {
   const [data, setData] = useState(null);
@@ -19,9 +16,8 @@ export default function Contact() {
 
   return (
     <div className="home-container">
-      <Header />
       <main className="main-content">
-        CONTACT
+        CONTACT DETAILS
         {data && (
           <div className="api-data">
             <h2 className="api-data-title">API Data:</h2>
@@ -31,7 +27,6 @@ export default function Contact() {
           </div>
         )}
       </main>
-      <Footer />
     </div>
   );
 }
