@@ -5,6 +5,15 @@ import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
+// 헤더 메뉴 아이템
+const navItems = [
+  { name: "관통사", href: "/recruitment?category=01" },
+  { name: "TC", href: "/recruitment?category=02" },
+  { name: "국내", href: "/recruitment?category=03" },
+  { name: "Contact", href: "/contact" },
+  { name: "Company", href: "http://www.inhousesoft.com/" },
+];
+
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -38,19 +47,15 @@ export default function Header() {
           </button>
         </div>
         <div className="hidden lg:flex lg:gap-x-12">
-          <a
-            href="/contact"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Contact
-          </a>
-          <a
-            href="http://www.inhousesoft.com/"
-            target="_blank"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Company
-          </a>
+          {navItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-sm font-semibold leading-6 text-gray-900"
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
       </nav>
       <Dialog
@@ -83,19 +88,15 @@ export default function Header() {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
-                <a
-                  href="/contact"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Contact
-                </a>
-                <a
-                  href="http://www.inhousesoft.com/"
-                  target="_blank"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Company
-                </a>
+                {navItems.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </a>
+                ))}
               </div>
             </div>
           </div>

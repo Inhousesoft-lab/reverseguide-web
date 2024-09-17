@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "category": "01",
+    "title": "Senior Software Engineer",
+    "href": "/job/senior-software-engineer",
+    "description": "We're looking for an experienced software engineer to lead our backend team. The ideal candidate will have strong skills in distributed systems and cloud technologies.",
+    "date": "2023-06-15",
+    "meta": { "department": "Engineering", "location": "Remote" },
+    "author": {
+      "name": "Jane Doe",
+      "role": "CTO",
+      "imageUrl": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    }
+  },
+  {
+    "id": 2,
+    "category": "02",
+    "title": "UX Designer",
+    "href": "/job/ux-designer",
+    "description": "Join our design team to create intuitive and engaging user experiences for our products. We're seeking a creative individual with a strong portfolio and user-centered design approach.",
+    "date": "2023-06-14",
+    "meta": { "department": "Design", "location": "New York, NY" },
+    "author": {
+      "name": "John Smith",
+      "role": "Design Lead",
+      "imageUrl": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    }
+  },
+  {
+    "id": 3,
+    "category": "03",
+    "title": "Marketing Manager",
+    "href": "/job/marketing-manager",
+    "description": "We're seeking a dynamic marketing manager to oversee our digital marketing initiatives. The ideal candidate will have experience in SaaS marketing and a data-driven approach.",
+    "date": "2023-06-13",
+    "meta": { "department": "Marketing", "location": "San Francisco, CA" },
+    "author": {
+      "name": "Emily Brown",
+      "role": "CMO",
+      "imageUrl": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    }
+  },
+  {
+    "id": 4,
+    "category": "01",
+    "title": "DevOps Engineer",
+    "href": "/job/devops-engineer",
+    "description": "Join our infrastructure team to build and maintain our cloud-based systems. We're looking for someone with strong experience in AWS, Docker, and CI/CD pipelines.",
+    "date": "2023-06-12",
+    "meta": { "department": "Engineering", "location": "Remote" },
+    "author": {
+      "name": "Michael Chen",
+      "role": "Infrastructure Lead",
+      "imageUrl": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    }
+  },
+  {
+    "id": 5,
+    "category": "02",
+    "title": "Product Manager",
+    "href": "/job/product-manager",
+    "description": "We're looking for a product manager to drive the development of our core products. The ideal candidate will have a technical background and experience in agile methodologies.",
+    "date": "2023-06-11",
+    "meta": { "department": "Product", "location": "Boston, MA" },
+    "author": {
+      "name": "Sarah Johnson",
+      "role": "Head of Product",
+      "imageUrl": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    }
+  },
+  {
+    "id": 6,
+    "category": "03",
+    "title": "Customer Success Manager",
+    "href": "/job/customer-success-manager",
+    "description": "Join our customer success team to ensure our clients get the most value from our products. We're seeking someone with excellent communication skills and a passion for customer satisfaction.",
+    "date": "2023-06-10",
+    "meta": { "department": "Customer Success", "location": "Chicago, IL" },
+    "author": {
+      "name": "David Lee",
+      "role": "Director of Customer Success",
+      "imageUrl": "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+    }
+  }
+]
