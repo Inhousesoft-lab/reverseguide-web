@@ -1,7 +1,8 @@
-"use client"; // This marks the component as a Client Component
+"use client";
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import "./home.css";
 
 export default function Home() {
   const [data, setData] = useState(null);
@@ -17,45 +18,42 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+    <div className="home-container">
+      <main className="main-content">
         <Image
-          className="dark:invert"
+          className="logo"
           src="https://nextjs.org/icons/next.svg"
           alt="Next.js logo"
           width={180}
           height={38}
           priority
         />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
+        <ol className="instruction-list">
+          <li className="instruction-item">
             Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.js
-            </code>
-            .
+            <code className="code-snippet">src/app/page.js</code>.
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
 
         {data && (
-          <div className="mt-4 text-center sm:text-left">
-            <h2 className="text-lg font-bold">API Data:</h2>
-            <pre className="bg-gray-100 p-2 rounded">
+          <div className="api-data">
+            <h2 className="api-data-title">API Data:</h2>
+            <pre className="api-data-content">
               {JSON.stringify(data, null, 2)}
             </pre>
           </div>
         )}
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        <div className="button-container">
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
+            className="primary-button"
             href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
           >
             <Image
-              className="dark:invert"
+              className="logo"
               src="https://nextjs.org/icons/vercel.svg"
               alt="Vercel logomark"
               width={20}
@@ -64,7 +62,7 @@ export default function Home() {
             Deploy now
           </a>
           <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
+            className="secondary-button"
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
@@ -73,9 +71,9 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+      <footer className="footer">
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          className="footer-link"
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
@@ -90,7 +88,7 @@ export default function Home() {
           Learn
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          className="footer-link"
           href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
@@ -105,7 +103,7 @@ export default function Home() {
           Examples
         </a>
         <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
+          className="footer-link"
           href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
           target="_blank"
           rel="noopener noreferrer"
