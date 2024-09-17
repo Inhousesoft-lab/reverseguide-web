@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import NameField from "@/widgets/NameField";
 import "./home.css";
 
 export default function Home() {
@@ -44,6 +45,8 @@ export default function Home() {
             </pre>
           </div>
         )}
+
+        <NameField />
 
         <div className="button-container">
           <a
