@@ -1,20 +1,10 @@
 import Image from "next/image";
 import NameField from "@/widgets/NameField";
-import "@/styles/home.css";
-import Footer from "@/widgets/Footer";
 
-export default function Page() {
+export default function Home() {
   return (
     <div className="home-container">
       <main className="main-content">
-        <Image
-          className="logo"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
         <ol className="instruction-list">
           <li className="instruction-item">
             Get started by editing{" "}
@@ -51,7 +41,6 @@ export default function Page() {
           </a>
         </div>
       </main>
-      <Footer />
     </div>
   );
 }
