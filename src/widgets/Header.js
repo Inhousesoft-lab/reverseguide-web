@@ -4,37 +4,37 @@ import { useState } from "react";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
+import Link from "next/link";
+import Logo from "@/public/assets/images/common/logo.svg";
 
 // 헤더 메뉴 아이템
 const navItems = [
   { name: "관통사", href: "/recruitment?category=01" },
   { name: "TC", href: "/recruitment?category=02" },
   { name: "국내", href: "/recruitment?category=03" },
-  { name: "Contact", href: "/contact" },
-  { name: "Company", href: "http://www.inhousesoft.com/" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white">
+    <header>
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
       >
         <div className="flex lg:flex-1">
-          <a href="/" className="-m-1.5 p-1.5">
+          <Link href="/">
             <span className="sr-only">reverseguide</span>
             <Image
               className="logo"
-              src="https://nextjs.org/icons/next.svg"
-              alt="Next.js logo"
+              src={Logo}
+              alt="reverseguide"
               width={180}
               height={38}
               priority
             />
-          </a>
+          </Link>
         </div>
         <div className="flex lg:hidden">
           <button

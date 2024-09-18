@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Logo from "@/public/assets/images/common/logo.svg";
 
 export default function Footer() {
   return (
@@ -11,15 +12,15 @@ export default function Footer() {
                 <span className="sr-only">reverseguide</span>
                 <Image
                   className="logo"
-                  src="https://nextjs.org/icons/next.svg"
-                  alt="Next.js logo"
+                  src={Logo}
+                  alt="reverseguide"
                   width={180}
                   height={38}
                   priority
                 />
               </a>
             </div>
-            <p className="py-8 text-sm text-gray-500 lg:max-w-xs text-center lg:text-left">
+            <p className="py-8 text-sm text-gray-500 lg:max-w-xs lg:text-left">
               상호명: 인하우스소프트 | 대표: 이태린 | 사업자등록번호:
               731-08-02170
             </p>
@@ -31,7 +32,14 @@ export default function Footer() {
           <div className="lg:mx-auto text-left ">
             <h4 className="text-lg text-gray-900 font-medium mb-7">고객센터</h4>
             <ul className="text-sm  transition-all duration-500">
-              <li className="mb-6">support@reverseguide.com</li>
+              <li className="mb-6">
+                <a
+                  href="mailto:support@reverseguide.com"
+                  className="hover:underline"
+                >
+                  support@reverseguide.com
+                </a>
+              </li>
             </ul>
           </div>
         </div>
