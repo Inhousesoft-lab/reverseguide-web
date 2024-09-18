@@ -24,8 +24,8 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow m-5 flex flex-col items-center">
-          <div className="w-full max-w-4xl">{children}</div>
+        <main className="flex-grow flex flex-col items-center mx-auto">
+          <div className="w-full max-w-[840px]">{children}</div>
         </main>
         <Footer />
       </body>
