@@ -4,7 +4,12 @@ const nextConfig = {
     dirs: ["src"],
   },
   images: {
-    domains: ["images.unsplash.com"],
+    domains: [
+      "images.unsplash.com",
+      "www.kotga.or.kr",
+      "www.segyebiz.com",
+      "cdn.gukjenews.com",
+    ],
   },
   reactStrictMode: true,
   webpack: (config, { isServer }) => {
