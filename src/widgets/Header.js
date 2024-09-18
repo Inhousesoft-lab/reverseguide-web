@@ -10,8 +10,9 @@ import Logo from "@/public/assets/images/common/logo.svg";
 // 헤더 메뉴 아이템
 const navItems = [
   { name: "관통사", href: "/recruitment?category=01" },
-  { name: "TC", href: "/recruitment?category=02" },
-  { name: "국내", href: "/recruitment?category=03" },
+  { name: "유튜브", href: "/youtube" },
+  { name: "뉴스", href: "/news" },
+  { name: "홍보", href: "/marketing" },
 ];
 
 export default function Header() {
