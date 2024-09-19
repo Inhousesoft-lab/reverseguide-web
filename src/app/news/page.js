@@ -1,10 +1,10 @@
 "use client";
 
 import useGoogleSheet from "@/hooks/useGooglesheet";
-import { GOOGLE_SHEET_ID, GID_LIST } from "../constants/google-sheet";
+import { GOOGLE_SHEET_ID, GID_LIST } from "@/constants/google-sheet";
 import NewsCard from "@/widgets/NewsCard";
 
-export default function GoogleSheet() {
+export default function NewsList() {
   const { googleSheetRows, isLoading, error } = useGoogleSheet(
     GOOGLE_SHEET_ID,
     GID_LIST.NEWS

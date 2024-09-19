@@ -1,7 +1,7 @@
 "use client";
 
 import useGoogleSheet from "@/hooks/useGooglesheet";
-import { GOOGLE_SHEET_ID, GID_LIST } from "../constants/google-sheet";
+import { GOOGLE_SHEET_ID, GID_LIST } from "@/constants/google-sheet";
 import MarketingCard from "@/widgets/MarketingCard";
 
 export default function MarketingList() {
