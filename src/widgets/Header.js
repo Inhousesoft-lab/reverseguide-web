@@ -9,6 +9,7 @@ import Logo from "@/public/assets/images/common/logo.svg";
 
 // 헤더 메뉴 아이템
 const navItems = [
+  { name: "HOME", href: "/home" },
   { name: "채용정보", href: "/job" },
   { name: "유튜브", href: "/youtube" },
   { name: "뉴스", href: "/news" },

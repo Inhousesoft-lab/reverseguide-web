@@ -24,6 +24,16 @@ const nextConfig = {
     }
     return config;
   },
+  // home 페이지로 리다이렉트
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/home",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;
