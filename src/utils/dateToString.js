@@ -20,3 +20,28 @@ export function formatRelativeTime(dateString) {
     return "방금 전";
   }
 }
+
+export function formatApplicationDeadline(dateString) {
+  const now = new Date();
+  now.setHours(0, 0, 0, 0); // Set to start of day for accurate comparison
+  const deadline = new Date(dateString);
+  deadline.setHours(0, 0, 0, 0);
+
+  const diffTime = deadline - now;
+  const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+  if (diffDays === 0) {
+    return "오늘마감";
+  } else if (diffDays > 0) {
+    return `${Math.abs(diffDays)}일전`;
+  } else if (diffDays < 0) {
+    return `마감`;
+  } else {
+    // For dates more than 99 days in the past or future
+    return deadline.toLocaleDateString("ko-KR", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+  }
+}

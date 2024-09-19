@@ -9,6 +9,7 @@ const nextConfig = {
       "www.kotga.or.kr",
       "www.segyebiz.com",
       "cdn.gukjenews.com",
+      "imgs.jobkorea.co.kr",
     ],
   },
   reactStrictMode: true,
