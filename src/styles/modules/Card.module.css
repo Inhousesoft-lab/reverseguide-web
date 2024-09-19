@@ -73,3 +73,54 @@
   margin: 0 8px 0 0;
   max-height: 1.7rem;
 }
+
+/* Marketing Card */
+.marketingCard {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.marketingLogoContainer {
+  width: 4rem;
+  height: 4rem;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.marketingLogoImage {
+  border-radius: 0.375rem;
+  object-fit: contain;
+}
+
+.marketingMetaInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.marketingCategory {
+  color: #f97316;
+  font-weight: 600;
+}
+
+.marketingCompany {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.marketingTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.marketingOpenDate {
+  font-size: 1rem;
+  margin-top: 0.25rem;
+}
