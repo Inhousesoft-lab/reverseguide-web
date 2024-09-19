@@ -1,0 +1,75 @@
+/* Job Card */
+.jobCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.logoContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9.6rem;
+  height: 6.4rem;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  background: #fff;
+  box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, 0.08);
+}
+
+.logoImage {
+  object-fit: contain;
+}
+
+.metaInfo {
+  margin: 4px 0 0 0;
+}
+
+.deadline {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(244, 175, 72, 0.1);
+  color: #fb521c;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.1px;
+}
+
+.platform {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  margin: 0 0 0 6px;
+  color: #7d7d7d;
+  font-size: 12px;
+  line-height: 12px;
+  letter-spacing: -0.1px;
+  border-radius: 12px;
+  background: rgba(221, 221, 221, 0.3);
+}
+
+.title {
+  color: #000;
+  font-size: 16px;
+  letter-spacing: -0.1px;
+  max-height: 2.3rem;
+}
+
+.tagContainer {
+  max-height: 1.8rem;
+  color: #7d7d7d;
+  font-size: 12px;
+  line-height: normal;
+  letter-spacing: -0.1px;
+}
+
+.tag {
+  display: inline-block;
+  margin: 0 8px 0 0;
+  max-height: 1.7rem;
+}

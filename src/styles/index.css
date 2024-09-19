@@ -4,3 +4,6 @@
 
 /* Pages */
 @import "./Home.module.css";
+
+/* Widgets */
+@import "./modules/Card.module.css";
