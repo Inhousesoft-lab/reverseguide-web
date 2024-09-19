@@ -3,6 +3,7 @@
 import useGoogleSheet from "@/hooks/useGooglesheet";
 import { GOOGLE_SHEET_ID, GID_LIST } from "@/constants/google-sheet";
 import { formatRelativeTime } from "@/utils/dateToString";
+import YoutubeCard from "@/widgets/YoutubeCard";
 
 function extractVideoId(url) {
   const regExp =
@@ -29,46 +30,16 @@ export default function YoutubeList() {
           </h2>
         </div>
         <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {googleSheetRows.map((item) => {
-            const title = item[1];
-            const description = item[2];
-            const youtubeUrl = item[3];
-            const uploadDate = formatRelativeTime(item[4]);
-            const videoId = extractVideoId(youtubeUrl);
-            return (
-              <div
-                key={item[0]}
-                className="flex flex-col overflow-hidden rounded-lg shadow-lg"
-              >
-                <div className="flex-shrink-0">
-                  <iframe
-                    className="h-48 w-full object-cover border-none"
-                    src={`https://www.youtube.com/embed/${videoId}`}
-                    title={title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-                <div className="flex flex-1 flex-col justify-between bg-white p-6">
-                  <div className="flex-1">
-                    <a href={youtubeUrl} target="_blank" className="mt-2 block">
-                      <p className="text-xl font-semibold text-gray-900">
-                        {title}
-                      </p>
-                      <p className="mt-3 text-base text-gray-500">
-                        {description}
-                      </p>
-                    </a>
-                  </div>
-                  <div className="mt-6 flex items-center">
-                    <div className="flex-shrink-0">
-                      <span className="sr-only">Upload date</span>
-                      <p className="text-sm text-gray-500">{uploadDate}</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            );
+          {googleSheetRows.map((el) => {
+            const item = {
+              id: el[0],
+              title: el[1],
+              description: el[2],
+              youtubeUrl: el[3],
+              videoId: extractVideoId(el[3]),
+              uploadDate: formatRelativeTime(el[4]),
+            };
+            return <YoutubeCard key={item.id} item={item} />;
           })}
         </div>
       </div>
