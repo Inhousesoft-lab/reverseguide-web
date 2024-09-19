@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import useGoogleSheet from "@/hooks/useGooglesheet";
 import { GOOGLE_SHEET_ID, GID_LIST } from "@/constants/google-sheet";
-import MarketingCard from "@/widgets/MarketingCard";
+import { MarketingCard, MarketingCardSkeleton } from "@/widgets";
 
 export default function MarketingList() {
   const [rowData, setRowData] = useState([]);
@@ -37,7 +37,7 @@ export default function MarketingList() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {isLoading || error
             ? [...Array(6)].map((_, index) => (
-                <SkeletonMarketingCard key={index} />
+                <MarketingCardSkeleton key={index} />
               ))
             : rowData.map((item) => {
                 return (
@@ -47,20 +47,6 @@ export default function MarketingList() {
                 );
               })}
         </div>
-      </div>
-    </div>
-  );
-}
-
-function SkeletonMarketingCard() {
-  return (
-    <div className="w-full bg-white rounded-xl shadow-md overflow-hidden animate-pulse">
-      <div className="aspect-w-16 aspect-h-9 bg-gray-300"></div>
-      <div className="p-4">
-        <div className="h-20 bg-gray-300 rounded w-3/4 mb-2"></div>
-        <div className="h-4 bg-gray-300 rounded w-full mb-2"></div>
-        <div className="h-4 bg-gray-300 rounded w-5/6"></div>
-        <div className="h-3 bg-gray-300 rounded w-1/4 mt-4"></div>
       </div>
     </div>
   );

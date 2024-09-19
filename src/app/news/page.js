@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import useGoogleSheet from "@/hooks/useGooglesheet";
 import { GOOGLE_SHEET_ID, GID_LIST } from "@/constants/google-sheet";
-import NewsCard from "@/widgets/NewsCard";
+import { NewsCard, NewsCardSkeleton } from "@/widgets";
 
 export default function NewsList() {
   const [rowData, setRowData] = useState([]);
@@ -34,7 +34,7 @@ export default function NewsList() {
         <h1 className="text-3xl font-bold text-gray-900 mb-8">News</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {isLoading || error
-            ? [...Array(6)].map((_, index) => <SkeletonNewsCard key={index} />)
+            ? [...Array(6)].map((_, index) => <NewsCardSkeleton key={index} />)
             : rowData.map((item) => {
                 return <NewsCard key={item.id} item={item} />;
               })}
