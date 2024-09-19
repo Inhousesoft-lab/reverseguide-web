@@ -10,6 +10,7 @@ const nextConfig = {
       "www.segyebiz.com",
       "cdn.gukjenews.com",
       "imgs.jobkorea.co.kr",
+      "file1.jobkorea.co.kr",
     ],
   },
   reactStrictMode: true,

@@ -12,7 +12,7 @@ const navItems = [
   { name: "채용정보", href: "/recruitment?category=01" },
   { name: "유튜브", href: "/youtube" },
   { name: "뉴스", href: "/news" },
-  { name: "홍보", href: "/marketing" },
+  { name: "관련정보", href: "/marketing" },
 ];
 
 export default function Header() {
