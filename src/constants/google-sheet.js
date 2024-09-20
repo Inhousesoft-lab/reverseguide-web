@@ -5,6 +5,7 @@ const GID_LIST = {
   YOUTUBE: 1, // 유튜브
   NEWS: 2, // 뉴스
   MAKETING: 3, // 관련정보
+  SITE: 4, // 사이트
 };
 
 export { GOOGLE_SHEET_ID, GID_LIST };

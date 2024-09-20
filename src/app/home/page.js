@@ -1,33 +1,53 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import useGoogleSheet from "@/hooks/useGooglesheet";
 import { GOOGLE_SHEET_ID, GID_LIST } from "@/constants/google-sheet";
-import NewsCard from "@/widgets/NewsCard";
+import { JobCardSkeleton } from "@/widgets";
+import Image from "next/image";
 
 export default function Home() {
+  const [rowData, setRowData] = useState([]);
   const { googleSheetRows, isLoading, error } = useGoogleSheet(
     GOOGLE_SHEET_ID,
-    GID_LIST.NEWS
+    GID_LIST.SITE
   );
 
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  useEffect(() => {
+    if (googleSheetRows) {
+      const formattedRows = googleSheetRows.map((row) => {
+        return {
+          id: row[0],
+          name: row[1],
+          image: row[2],
+          link: row[3],
+        };
+      });
+      setRowData(formattedRows);
+    }
+  }, [googleSheetRows]);
 
   return (
-    <div className="bg-white py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-          {googleSheetRows.map((el) => {
-            const item = {
-              id: el[0],
-              title: el[1],
-              viewDate: el[2],
-              image01: el[3],
-              image02: el[4],
-              link: el[5],
-            };
-            return <NewsCard key={item.id} item={item} />;
-          })}
+    <div className="bg-white py-12 sm:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-2xl font-bold text-gray-900 mb-8">
+          관통사 관련 사이트
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {isLoading || error
+            ? [...Array(3)].map((_, index) => <JobCardSkeleton key={index} />)
+            : rowData.map((item) => {
+                return (
+                  <a key={item.id} href={item.link} target="_blank">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={120}
+                      height={40}
+                    />
+                  </a>
+                );
+              })}
         </div>
       </div>
     </div>
