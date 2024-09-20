@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import useGoogleSheet from "@/hooks/useGooglesheet";
 import { GOOGLE_SHEET_ID, GID_LIST } from "@/constants/google-sheet";
 import { formatApplicationDeadline } from "@/utils/dateToString";
@@ -20,10 +21,19 @@ function ContentSection({
   data,
   CardComponent,
   SkeletonComponent,
+  moreLink,
 }) {
   return (
     <section>
-      <h1 className="text-2xl font-bold text-gray-900 mb-8">{title}</h1>
+      <div className="flex justify-between items-center mb-8">
+        <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
+        <Link
+          href={moreLink}
+          className="text-sm text-gray-600 hover:text-gray-900"
+        >
+          더보기 &gt;
+        </Link>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {isLoading
           ? [...Array(loadingCardCount)].map((_, index) => (
@@ -147,6 +157,7 @@ export default function Home() {
         data={jobData}
         CardComponent={JobCard}
         SkeletonComponent={JobCardSkeleton}
+        moreLink="/job"
       />
       <div className="mt-16">
         <ContentSection
@@ -156,6 +167,7 @@ export default function Home() {
           data={marketingData}
           CardComponent={MarketingCard}
           SkeletonComponent={MarketingCardSkeleton}
+          moreLink="/marketing"
         />
       </div>
       <div className="mt-16">
