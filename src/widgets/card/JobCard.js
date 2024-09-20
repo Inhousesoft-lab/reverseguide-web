@@ -11,21 +11,12 @@ export default function JobCard({ item }) {
   } = item;
   return (
     <div className="jobCard">
-      <div className="logoContainer">
-        {companyLogo && (
-          <Image
-            className="logoImage"
-            src={companyLogo}
-            alt={`${companyName} logo`}
-            fill
-          />
-        )}
-      </div>
       <div className="metaInfo">
         <span className="deadline">{applicationDeadline}</span>
         <span className="platform">{platform}</span>
       </div>
-      <div className="title">{title}</div>
+      <div className="companyName">{companyName}</div>
+      <div className="jobTitle">{title}</div>
       {tags && (
         <div className="tagContainer">
           {tags.map((tag, index) => (
