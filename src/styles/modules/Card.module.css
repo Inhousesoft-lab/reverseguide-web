@@ -1,5 +1,5 @@
 /* Job Card */
-.jobCard {
+.cardContainer {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -8,6 +8,7 @@
   padding: 16px;
 }
 
+/* 
 .logoContainer {
   position: relative;
   display: flex;
@@ -23,13 +24,13 @@
 
 .logoImage {
   object-fit: contain;
-}
+} */
 
-.metaInfo {
+.badgeWrapper {
   margin: 4px 0 0 0;
 }
 
-.deadline {
+.mainBadge {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -42,12 +43,11 @@
   letter-spacing: -0.1px;
 }
 
-.platform {
+.subBadge {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   padding: 6px;
-  margin: 0 0 0 6px;
   color: #7d7d7d;
   font-size: 12px;
   line-height: 12px;
@@ -56,14 +56,14 @@
   background: rgba(221, 221, 221, 0.3);
 }
 
-.companyName {
+.cardSubtitle {
   color: #000;
   font-size: 14px;
   line-height: 1.2; /* Adjust this value as needed */
   max-height: 2.4em; /* This is equivalent to 2 lines (2 * 1.2em) */
 }
 
-.jobTitle {
+.cardTitle {
   color: #000;
   font-size: 16px;
   line-height: 1.2; /* Adjust this value as needed */
@@ -74,6 +74,12 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
+}
+.cardMetaInfo {
+  color: #7d7d7d;
+  font-size: 12px;
+  line-height: normal;
+  letter-spacing: -0.1px;
 }
 
 .tagContainer {

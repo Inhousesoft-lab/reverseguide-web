@@ -10,13 +10,13 @@ export default function JobCard({ item }) {
     tags,
   } = item;
   return (
-    <div className="jobCard">
-      <div className="metaInfo">
-        <span className="deadline">{applicationDeadline}</span>
-        <span className="platform">{platform}</span>
+    <div className="cardContainer">
+      <div className="badgeWrapper">
+        <span className="mainBadge">{applicationDeadline}</span>
+        <span className="subBadge ml-2">{platform}</span>
       </div>
-      <div className="companyName">{companyName}</div>
-      <div className="jobTitle">{title}</div>
+      <div className="cardSubtitle">{companyName}</div>
+      <div className="cardTitle">{title}</div>
       {tags && (
         <div className="tagContainer">
           {tags.map((tag, index) => (

@@ -20,7 +20,7 @@ export default function YoutubeList() {
         return {
           id: row[0],
           title: row[1],
-          description: row[2],
+          creator: row[2],
           url: row[3],
           videoId: extractVideoId(row[3]),
           uploadDate: formatRelativeTime(row[4]),

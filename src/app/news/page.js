@@ -17,11 +17,12 @@ export default function NewsList() {
       const formattedRows = googleSheetRows.map((row) => {
         return {
           id: row[0],
-          title: row[1],
-          viewDate: row[2],
-          image01: row[3],
-          image02: row[4],
-          link: row[5],
+          companyName: row[1],
+          title: row[2],
+          viewDate: row[3],
+          image01: row[4],
+          image02: row[5],
+          link: row[6],
         };
       });
       setRowData(formattedRows);
