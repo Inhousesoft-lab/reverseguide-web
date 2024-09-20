@@ -17,7 +17,7 @@ const useGoogleSheet = (sheetId, gid) => {
         if (!response.ok) {
           throw new Error(data.error || "Failed to fetch data");
         }
-        setGoogleSheetRows(data);
+        setGoogleSheetRows(data.reverse());
       } catch (err) {
         console.error("Error in useGoogleSheet:", err);
         setError(err.message);
