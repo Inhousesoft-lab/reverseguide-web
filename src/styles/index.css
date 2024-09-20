@@ -1,2 +1,9 @@
+/* Global */
 @import "./globals.css";
+@import "./fonts.css";
+
+/* Pages */
 @import "./Home.module.css";
+
+/* Widgets */
+@import "./modules/Card.module.css";

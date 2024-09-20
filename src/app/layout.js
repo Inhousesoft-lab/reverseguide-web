@@ -7,8 +7,10 @@ export default function RootLayout({ children }) {
     <html lang="ko">
       <body className="flex flex-col min-h-screen">
         <Header />
-        <main className="flex-grow flex flex-col items-center mx-auto">
-          <div className="w-full max-w-[840px]">{children}</div>
+        <main className="flex-grow flex flex-col items-center w-full">
+          <div className="w-full max-w-[840px] px-4 sm:px-6 md:px-8">
+            {children}
+          </div>
         </main>
         <Footer />
       </body>
