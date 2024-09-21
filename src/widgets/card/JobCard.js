@@ -12,7 +12,11 @@ export default function JobCard({ item }) {
   return (
     <div className="cardContainer">
       <div className="badgeWrapper">
-        <span className="mainBadge">{applicationDeadline}</span>
+        <span
+          className={applicationDeadline === "마감" ? "subBadge" : "mainBadge"}
+        >
+          {applicationDeadline}
+        </span>
         <span className="subBadge ml-2">{platform}</span>
       </div>
       <div className="cardSubtitle">{companyName}</div>

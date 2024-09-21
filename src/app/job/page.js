@@ -15,22 +15,37 @@ export default function JobList() {
 
   useEffect(() => {
     if (googleSheetRows) {
-      const formattedRows = googleSheetRows.map((row) => {
-        return {
-          id: row[0],
-          category: row[1],
-          companyName: row[2],
-          title: row[3],
-          tags: [row[4], row[5], row[6]],
-          companyLogo: row[7],
-          platform: row[8],
-          link: row[9],
-          applicationDeadline:
-            row[10].toLowerCase() === "true"
-              ? "상시모집"
-              : formatApplicationDeadline(row[12]),
-        };
-      });
+      const today = new Date();
+
+      const formattedRows = googleSheetRows
+        .map((row) => {
+          return {
+            id: row[0],
+            category: row[1],
+            companyName: row[2],
+            title: row[3],
+            tags: [row[4], row[5], row[6]],
+            companyLogo: row[7],
+            platform: row[8],
+            link: row[9],
+            openDate: row[10].toLowerCase() === "true",
+            endDate: row[12] ? new Date(row[12]) : null,
+            applicationDeadline:
+              row[10].toLowerCase() === "true"
+                ? "상시모집"
+                : formatApplicationDeadline(row[12]),
+          };
+        })
+        .filter((row) => {
+          if (row.openDate) {
+            return true; // Always include if openDate is true
+          } else {
+            const sevenDaysLater = new Date(
+              row.endDate.getTime() + 7 * 24 * 60 * 60 * 1000
+            );
+            return sevenDaysLater >= today; // Include if endDate is within the last 7 days
+          }
+        });
       setRowData(formattedRows);
     }
   }, [googleSheetRows]);
