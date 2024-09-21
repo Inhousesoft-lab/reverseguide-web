@@ -15,6 +15,7 @@ const navItems = [
   { name: "유튜브", href: "/youtube" },
   { name: "뉴스", href: "/news" },
   { name: "최신정보", href: "/marketing" },
+  { name: "커뮤니티", href: "/community" },
 ];
 
 export default function Header() {
