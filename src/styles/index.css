@@ -5,6 +5,7 @@
 
 /* Pages */
 @import "./Home.module.css";
+@import "./NotFound.module.css";
 
 /* Widgets */
 @import "./modules/Card.module.css";
