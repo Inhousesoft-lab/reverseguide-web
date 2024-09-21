@@ -15,6 +15,159 @@ main {
   flex: 1 0 auto;
 }
 
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: white;
+  border-bottom: 1px solid #e9eaec;
+}
+
+.header__nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header__logo {
+  flex-shrink: 0;
+}
+
+.header__logo-image {
+  height: 2.5rem;
+  width: auto;
+}
+
+.header__mobile-menu {
+  display: none;
+}
+
+.header__mobile-menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header__mobile-menu-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #4a5568;
+}
+
+.header__desktop-menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header__menu-item {
+  text-decoration: none;
+  color: #9ea1a5;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+
+.header__menu-item:hover,
+.header__menu-item--active {
+  color: #2d3748;
+}
+
+.header__mobile-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__mobile-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.header__mobile-dialog-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.header__mobile-dialog-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 24rem;
+  background-color: white;
+  padding: 1.5rem;
+  overflow-y: auto;
+}
+
+.header__mobile-dialog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header__mobile-dialog-logo-image {
+  height: 2rem;
+  width: auto;
+}
+
+.header__mobile-dialog-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.header__mobile-dialog-close-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #4a5568;
+}
+
+.header__mobile-dialog-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header__mobile-dialog-nav-item {
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: #9ea1a5;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: color 0.2s ease-in-out;
+}
+
+.header__mobile-dialog-nav-item:hover,
+.header__mobile-dialog-nav-item--active {
+  color: #2d3748;
+}
+
+@media (max-width: 768px) {
+  .header__desktop-menu {
+    display: none;
+  }
+
+  .header__mobile-menu {
+    display: block;
+  }
+}
+
 /* Footer */
 .footer {
   flex-shrink: 0;

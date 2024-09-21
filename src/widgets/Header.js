@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
@@ -18,18 +19,16 @@ const navItems = [
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
-    <header>
-      <nav
-        aria-label="Global"
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
-      >
-        <div className="flex lg:flex-1">
+    <header className="header">
+      <nav className="header__nav" aria-label="Global">
+        <div className="header__logo">
           <Link href="/">
             <span className="sr-only">reverseguide</span>
             <Image
-              className="logo"
+              className="header__logo-image"
               src={Logo}
               alt="reverseguide"
               width={180}
@@ -38,70 +37,79 @@ export default function Header() {
             />
           </Link>
         </div>
-        <div className="flex lg:hidden">
+        <div className="header__mobile-menu">
           <button
             type="button"
             onClick={() => setMobileMenuOpen(true)}
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="header__mobile-menu-button"
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon aria-hidden="true" className="h-6 w-6" />
+            <Bars3Icon
+              aria-hidden="true"
+              className="header__mobile-menu-icon"
+            />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12">
+        <div className="header__desktop-menu">
           {navItems.map((item) => (
-            <a
+            <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-semibold leading-6 text-gray-900"
+              className={`header__menu-item ${
+                pathname === item.href ? "header__menu-item--active" : ""
+              }`}
             >
               {item.name}
-            </a>
+            </Link>
           ))}
         </div>
       </nav>
       <Dialog
         open={mobileMenuOpen}
-        onClose={setMobileMenuOpen}
-        className="lg:hidden"
+        onClose={() => setMobileMenuOpen(false)}
+        className="header__mobile-dialog"
       >
-        <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-          <div className="flex items-center justify-between">
-            <a href="/" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+        <div className="header__mobile-dialog-overlay" aria-hidden="true" />
+        <DialogPanel className="header__mobile-dialog-content">
+          <div className="header__mobile-dialog-header">
+            <Link href="/" className="header__mobile-dialog-logo">
+              <span className="sr-only">reverseguide</span>
               <Image
-                alt=""
-                src="https://nextjs.org/icons/next.svg"
-                className="h-8 w-auto"
+                alt="reverseguide"
+                src={Logo}
+                className="header__mobile-dialog-logo-image"
                 width={180}
                 height={38}
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="header__mobile-dialog-close"
             >
               <span className="sr-only">Close menu</span>
-              <XMarkIcon aria-hidden="true" className="h-6 w-6" />
+              <XMarkIcon
+                aria-hidden="true"
+                className="header__mobile-dialog-close-icon"
+              />
             </button>
           </div>
-          <div className="mt-6 flow-root">
-            <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="space-y-2 py-6">
-                {navItems.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                  >
-                    {item.name}
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
+          <nav className="header__mobile-dialog-nav">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`header__mobile-dialog-nav-item ${
+                  pathname === item.href
+                    ? "header__mobile-dialog-nav-item--active"
+                    : ""
+                }`}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
         </DialogPanel>
       </Dialog>
     </header>
