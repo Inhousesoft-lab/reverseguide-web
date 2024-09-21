@@ -1,6 +1,7 @@
 /* Global */
 @import "./globals.css";
 @import "./fonts.css";
+@import "./layout.css";
 
 /* Pages */
 @import "./Home.module.css";
