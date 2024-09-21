@@ -1,18 +1,16 @@
 "use client";
-import { useState, useEffect } from "react";
+
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 
-export default function Recruitment() {
+function BlogContent() {
   const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
   const searchParams = useSearchParams();
-
   const category = searchParams.get("category") || "01";
 
   useEffect(() => {
     async function fetchPosts() {
-      setIsLoading(true);
       try {
         const response = await fetch(`/api/blog?category=${category}`);
         if (!response.ok) throw new Error("Failed to fetch posts");
@@ -21,15 +19,11 @@ export default function Recruitment() {
       } catch (error) {
         console.error("Error fetching posts:", error);
         setPosts([]);
-      } finally {
-        setIsLoading(false);
       }
     }
 
     fetchPosts();
   }, [category]);
-
-  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div className="bg-white py-24 sm:py-32">
@@ -92,3 +86,13 @@ export default function Recruitment() {
     </div>
   );
 }
+
+function BlogPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <BlogContent />
+    </Suspense>
+  );
+}
+
+export default BlogPage;
