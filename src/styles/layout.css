@@ -1,20 +1,5 @@
 @charset "UTF-8";
 
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}
-
 /* Header */
 .header {
   top: 0;
@@ -167,11 +152,39 @@ main {
   }
 }
 
+/* Main */
+/* We'll use a flexbox-based sticky footer approach that will keep the footer at the bottom when content is short, and allow it to move down when content exceeds the screen height. */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.layout__body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* content to stretch to the full width of the container when there's minimal content */
+.layout__main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 2rem 1rem;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
 /* Footer */
 .footer {
   background-color: #f9fafc;
   padding: 3rem 1rem;
   z-index: 100;
+  margin-top: auto; /* This pushes the footer to the bottom */
 }
 
 .footer__container {

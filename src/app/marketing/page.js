@@ -31,22 +31,20 @@ export default function MarketingList() {
   }, [googleSheetRows]);
 
   return (
-    <div className="bg-white py-12 sm:py-24">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">최신 정보</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {isLoading || error
-            ? [...Array(6)].map((_, index) => (
-                <MarketingCardSkeleton key={index} />
-              ))
-            : rowData.map((item) => {
-                return (
-                  <a key={item.id} href={item.link} target="_blank">
-                    <MarketingCard item={item} />
-                  </a>
-                );
-              })}
-        </div>
+    <div className="sub-page">
+      <h1 className="sub-page__title">최신 정보</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {isLoading || error
+          ? [...Array(6)].map((_, index) => (
+              <MarketingCardSkeleton key={index} />
+            ))
+          : rowData.map((item) => {
+              return (
+                <a key={item.id} href={item.link} target="_blank">
+                  <MarketingCard item={item} />
+                </a>
+              );
+            })}
       </div>
     </div>
   );

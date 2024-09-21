@@ -1,0 +1,45 @@
+/* 메인 페이지 */
+.main-page {
+  padding: 2rem 0;
+}
+
+.main-page__title {
+  font-size: 20px;
+  font-weight: 500; /* medium */
+  letter-spacing: -0.1px;
+}
+
+.main-page__more-button {
+  font-size: 14px;
+  font-weight: 400; /* regular */
+  color: #7d7d7d;
+}
+
+/* 서브 페이지 */
+.sub-page {
+  padding: 2rem 0;
+}
+
+.sub-page__title {
+  font-size: 36px;
+  font-weight: 500;
+  letter-spacing: -0.1px;
+  margin-bottom: 1rem;
+}
+
+/* 커뮤니티 준비중 페이지 */
+.community__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10rem 0;
+}
+
+.community__description {
+  font-size: 1rem;
+  color: #7d7d7d;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  line-height: 1.5;
+  margin-top: 1rem;
+}

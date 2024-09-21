@@ -26,11 +26,8 @@ function ContentSection({
   return (
     <section>
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">{title}</h1>
-        <Link
-          href={moreLink}
-          className="text-sm text-gray-600 hover:text-gray-900"
-        >
+        <h1 className="main-page__title">{title}</h1>
+        <Link href={moreLink} className="main-page__more-button">
           더보기 &gt;
         </Link>
       </div>
@@ -59,8 +56,8 @@ function LogoSection({
 }) {
   return (
     <section>
-      <h1 className="text-2xl font-bold text-gray-900 mb-8">{title}</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+      <h1 className="main-page__title">{title}</h1>
+      <div className="grid grid-cols-3 md:grid-cols-5 gap-6 mt-4">
         {isLoading
           ? [...Array(loadingCardCount)].map((_, index) => (
               <SkeletonComponent key={index} />
@@ -149,7 +146,7 @@ export default function Home() {
   }, [siteRows]);
 
   return (
-    <div className="bg-white py-12 sm:py-24">
+    <div className="main-page">
       <ContentSection
         title="채용 정보"
         isLoading={isLoadingJob || jobError}
