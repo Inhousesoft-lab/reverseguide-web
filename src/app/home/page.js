@@ -117,16 +117,20 @@ export default function Home() {
 
   useEffect(() => {
     if (marketingRows) {
-      const formattedRows = marketingRows.slice(0, 3).map((row) => ({
-        id: row[0],
-        category: row[1],
-        companyName: row[2],
-        title: row[3],
-        openDate: row[4],
-        image01: row[5],
-        image02: row[6],
-        link: row[7],
-      }));
+      const formattedRows = marketingRows
+        .filter((row) => row[8] === "Y")
+        .slice(0, 3)
+        .map((row) => ({
+          id: row[0],
+          category: row[1],
+          companyName: row[2],
+          title: row[3],
+          openDate: row[4],
+          image01: row[5],
+          image02: row[6],
+          link: row[7],
+          useYn: row[8],
+        }));
       setMarketingData(formattedRows);
     }
   }, [marketingRows]);

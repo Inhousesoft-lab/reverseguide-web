@@ -14,18 +14,21 @@ export default function MarketingList() {
 
   useEffect(() => {
     if (googleSheetRows) {
-      const formattedRows = googleSheetRows.map((row) => {
-        return {
-          id: row[0],
-          category: row[1],
-          companyName: row[2],
-          title: row[3],
-          openDate: row[4],
-          image01: row[5],
-          image02: row[6],
-          link: row[7],
-        };
-      });
+      const formattedRows = googleSheetRows
+        .filter((row) => row[8] === "Y")
+        .map((row) => {
+          return {
+            id: row[0],
+            category: row[1],
+            companyName: row[2],
+            title: row[3],
+            openDate: row[4],
+            image01: row[5],
+            image02: row[6],
+            link: row[7],
+            useYn: row[8],
+          };
+        });
       setRowData(formattedRows);
     }
   }, [googleSheetRows]);
