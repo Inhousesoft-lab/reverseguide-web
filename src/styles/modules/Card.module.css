@@ -96,20 +96,20 @@
   max-height: 1.7rem;
 }
 
-/* Marketing Card */
-.marketingCard {
+/* Campaign Card */
+.campaignCard {
   width: 100%;
   max-width: 274px;
   margin: 0 auto;
 }
 
-.marketingImageContainer {
+.campaignImageContainer {
   position: relative;
   width: 100%;
   padding-bottom: 100%; /* This creates a 1:1 aspect ratio */
 }
 
-.marketingImage {
+.campaignImage {
   position: absolute;
   top: 0;
   left: 0;

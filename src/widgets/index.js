@@ -1,7 +1,7 @@
 import JobCard from "@/widgets/card/JobCard";
 import JobCardSkeleton from "@/widgets/skeleton/JobCardSkeleton";
-import MarketingCard from "@/widgets/card/MarketingCard";
-import MarketingCardSkeleton from "@/widgets/skeleton/MarketingCardSkeleton";
+import CampaignCard from "@/widgets/card/CampaignCard";
+import CampaignCardSkeleton from "@/widgets/skeleton/CampaignCardSkeleton";
 import NewsCard from "@/widgets/card/NewsCard";
 import NewsCardSkeleton from "@/widgets/skeleton/NewsCardSkeleton";
 import YouTubeCard from "@/widgets/card/YoutubeCard";
@@ -12,8 +12,8 @@ import SiteLogoSeleton from "@/widgets/skeleton/SiteLogoSeleton";
 export {
   JobCard,
   JobCardSkeleton,
-  MarketingCard,
-  MarketingCardSkeleton,
+  CampaignCard,
+  CampaignCardSkeleton,
   NewsCard,
   NewsCardSkeleton,
   YouTubeCard,

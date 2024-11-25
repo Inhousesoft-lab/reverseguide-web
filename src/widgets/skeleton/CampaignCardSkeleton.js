@@ -1,4 +1,4 @@
-export default function MarketingCardSkeleton() {
+export default function CampaignCardSkeleton() {
   return (
     <div className="w-full bg-white rounded-xl shadow-md overflow-hidden animate-pulse">
       <div className="p-2">

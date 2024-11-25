@@ -8,8 +8,8 @@ import { formatApplicationDeadline } from "@/utils/dateToString";
 import {
   JobCard,
   JobCardSkeleton,
-  MarketingCard,
-  MarketingCardSkeleton,
+  CampaignCard,
+  CampaignCardSkeleton,
   SiteLogo,
   SiteLogoSeleton,
 } from "@/widgets";
@@ -74,7 +74,7 @@ function LogoSection({
 
 export default function Home() {
   const [jobData, setJobData] = useState([]);
-  const [marketingData, setMarketingData] = useState([]);
+  const [campaignData, setCampaignData] = useState([]);
   const [siteData, setSiteData] = useState([]);
 
   const {
@@ -84,9 +84,9 @@ export default function Home() {
   } = useGoogleSheet(GOOGLE_SHEET_ID, GID_LIST.JOB);
 
   const {
-    googleSheetRows: marketingRows,
-    isLoading: isLoadingMarketing,
-    error: marketingError,
+    googleSheetRows: campaignRows,
+    isLoading: isLoadingCampaign,
+    error: campaignError,
   } = useGoogleSheet(GOOGLE_SHEET_ID, GID_LIST.MAKETING);
 
   const {
@@ -116,8 +116,8 @@ export default function Home() {
   }, [jobRows]);
 
   useEffect(() => {
-    if (marketingRows) {
-      const formattedRows = marketingRows
+    if (campaignRows) {
+      const formattedRows = campaignRows
         .filter((row) => row[8] === "Y")
         .slice(0, 3)
         .map((row) => ({
@@ -131,9 +131,9 @@ export default function Home() {
           link: row[7],
           useYn: row[8],
         }));
-      setMarketingData(formattedRows);
+      setCampaignData(formattedRows);
     }
-  }, [marketingRows]);
+  }, [campaignRows]);
 
   useEffect(() => {
     if (siteRows) {
@@ -163,12 +163,12 @@ export default function Home() {
       <div className="mt-16">
         <ContentSection
           title="최신 정보"
-          isLoading={isLoadingMarketing || marketingError}
+          isLoading={isLoadingCampaign || campaignError}
           loadingCardCount={3}
-          data={marketingData}
-          CardComponent={MarketingCard}
-          SkeletonComponent={MarketingCardSkeleton}
-          moreLink="/marketing"
+          data={campaignData}
+          CardComponent={CampaignCard}
+          SkeletonComponent={CampaignCardSkeleton}
+          moreLink="/campaign"
         />
       </div>
       <div className="mt-16">

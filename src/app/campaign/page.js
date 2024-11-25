@@ -3,9 +3,9 @@
 import { useState, useEffect } from "react";
 import useGoogleSheet from "@/hooks/useGooglesheet";
 import { GOOGLE_SHEET_ID, GID_LIST } from "@/constants/google-sheet";
-import { MarketingCard, MarketingCardSkeleton } from "@/widgets";
+import { CampaignCard, CampaignCardSkeleton } from "@/widgets";
 
-export default function MarketingList() {
+export default function CampaignList() {
   const [rowData, setRowData] = useState([]);
   const { googleSheetRows, isLoading, error } = useGoogleSheet(
     GOOGLE_SHEET_ID,
@@ -39,12 +39,12 @@ export default function MarketingList() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {isLoading || error
           ? [...Array(6)].map((_, index) => (
-              <MarketingCardSkeleton key={index} />
+              <CampaignCardSkeleton key={index} />
             ))
           : rowData.map((item) => {
               return (
                 <a key={item.id} href={item.link} target="_blank">
-                  <MarketingCard item={item} />
+                  <CampaignCard item={item} />
                 </a>
               );
             })}
